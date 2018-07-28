@@ -7,7 +7,7 @@ before_script:
   - ls
 
 script:
-  - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+  - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWORD
   - docker build -t visonliii/webapp .
 
 before_deploy:
