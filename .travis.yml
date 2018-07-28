@@ -10,8 +10,8 @@ script:
 - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
 - docker build -t visonliii/webapp .
 - docker push visonliii/webapp
-- docker pull visonliii/webapp
-- docker run -d -p 8080:8080 visonliii/webapp
+- make
+- make test
 
 env:
   global:
