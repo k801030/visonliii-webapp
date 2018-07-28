@@ -2,17 +2,17 @@ language: java
 install:
 - mvn clean package -B
 - mvn test
+
 before_script:
 - ls
-- ls ~/.ssh/
-- git remote add origin-ssh git@github.com:k801030/visonliii-webapp.git
-- git push origin-ssh master
+
 script:
 - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
 - docker build -t visonliii/webapp .
 - docker push visonliii/webapp
 - docker pull visonliii/webapp
 - docker run -d -p 8080:8080 visonliii/webapp
+
 env:
   global:
   - secure: nWxmsdgoGOgVA+Y8Q7XOUUQEDayI01BN04qKro4NpHl6V36eojyt2/fm5bFSA2y4ebqNr516jhfxCw/dBuPaSXN29j0FRDZxxRCyHDXWvv8quHXBxAq8qR9ArE9TEINkQ5QmjV2by+EBWNwdo+5JppaOniDAxO7MX7VcstfjgMbBNndFHhxsdh2+7ALA54gahMt6doRRIKWBNhJvja1GeiNe/eewXXOjy1vo0ayHf1c6RMvMjwpwSOsXRc3MlTYuzw55Utbq6ylH1ftJEwdJLf3sYK/ku+4v0P/tMF1oJfvyYEOuk3OlqOKl46NL61UcZs88YdMMC8iT2t2SwUkRetalrUrIsV5HNReIwgAON9GUnd/S1VHOl+H5NUTt5AsAXMmodIhOJbVsPcRkwC5gllbntuJyxcBBXHbceNiA5WUhhsEynqLMv2poctYt2eDjipLZ/aUwXqTP7oPkOOqWOhtAbZjkznGbFgI3F5fOV1nOieWmAhok2qfUB4YEy9YeINxycznHh6ePeS9gdVmpjZoPbgPSDB9T5/HOknhZkvcd4UahtLzNfu1MGECKsGpr3Hb9TI4juLWQZe0oiQesJyP24x1AXICoRywDbSsjFMtsaVejwNDxlkGXAmc6pFxuV3abTdkrBYmV+qh0OCZl2pcaaNLxCbNUXjC80/389ko=
