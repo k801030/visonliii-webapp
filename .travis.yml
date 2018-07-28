@@ -12,7 +12,7 @@ script:
 - docker push visonliii/webapp
 - make
 - sleep 10
-- make test
+- make integration-test
 
 env:
   global:

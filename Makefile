@@ -1,8 +1,11 @@
 .PHONY: all
 
-all:
-	docker pull visonliii/webapp; \
-  docker run -d -p 8080:8080 visonliii/webapp 
+all: docker-pull docker-run 
 
-test:
+docker-pull:
+	docker pull visonliii/webapp;
+docker-run:
+	docker run -d -p 8080:8080 visonliii/webapp;
+
+integration-test:
 	curl -v http://localhost:8080/
