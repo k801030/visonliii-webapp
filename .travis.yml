@@ -1,2 +1,7 @@
 language: java
-mvn clean package -B
+
+before_script:
+	- mvn clean package -B
+
+script:
+  - ls
