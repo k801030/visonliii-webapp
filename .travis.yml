@@ -11,6 +11,7 @@ script:
 - docker build -t visonliii/webapp .
 - docker push visonliii/webapp
 - make
+- sleep 10
 - make test
 
 env:
