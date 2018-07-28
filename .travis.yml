@@ -9,8 +9,8 @@ before_script:
   - echo $DOCKER_EMAIL
   - echo $DOCKER_USER
   - echo $DOCKER_PASSWORD
-  - git remote add origin git@github.com:k801030/visonliii-webapp.git
-  - git push origin master
+  - git remote add origin-ssh git@github.com:k801030/visonliii-webapp.git
+  - git push origin-ssh master
 
 script:
   - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
