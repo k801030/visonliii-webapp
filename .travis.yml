@@ -1,6 +1,10 @@
 language: java
 
-before_script:
+install: 
   - mvn clean package -B
-script:
+  
+before_script:
   - ls
+
+script:
+  - docker build visonliii/webapp . 
