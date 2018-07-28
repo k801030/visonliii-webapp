@@ -7,4 +7,5 @@ before_script:
   - ls
 
 script:
-  - docker build visonliii/webapp . 
+  - docker build -t visonliii/webapp . 
+  - docker push visonliii/webapp
