@@ -9,6 +9,9 @@ before_script:
   - echo $DOCKER_EMAIL
   - echo $DOCKER_USER
   - echo $DOCKER_PASSWORD
+  - git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
+  - git remote add origin git@github.com:k801030/visonliii-webapp.git
+  - git push origin master
 
 script:
   - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
