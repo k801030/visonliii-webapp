@@ -5,4 +5,4 @@ all:
   docker run -d -p 8080:8080 visonliii/webapp 
 
 test:
-	curl http://localhost:8080/
+	curl -v http://localhost:8080/
