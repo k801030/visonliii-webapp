@@ -12,7 +12,3 @@ Travis Pipeline
 3. Build Docker
 4. Push Docker
 
-
-
-test build PR
-
