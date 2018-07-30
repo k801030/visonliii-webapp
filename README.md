@@ -11,3 +11,4 @@ Travis Pipeline
 2. Build Package
 3. Build Docker
 4. Push Docker
+
