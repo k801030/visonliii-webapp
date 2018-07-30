@@ -1,19 +1,18 @@
 language: java
 install:
 - mvn clean package -B
+- mvn test
 
 before_script:
 - ls
 
 script:
-- mvn test
-
-deploy:
-- provider: script
-  script: sh ./travis/deploy.sh
-  skip_cleanup: true
-  on:
-    branch: master
+- docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+- docker build -t visonliii/webapp .
+- docker push visonliii/webapp
+- make
+- sleep 10
+- make integration-test
 
 env:
   global:
